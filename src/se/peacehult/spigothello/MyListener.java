@@ -10,7 +10,7 @@ public class MyListener implements Listener {
     //When a player joins, type in chat.
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        Bukkit.broadcastMessage("Welcome" + event.getPlayer().getName() + "to the server!");
+        Bukkit.broadcastMessage("Welcome " + event.getPlayer().getName() + " to the server!");
     }
 
 
