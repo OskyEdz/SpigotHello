@@ -9,7 +9,8 @@ public class CommandWelcome implements CommandExecutor {
 
     // Called using the command
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] strings) {
+
         if (sender instanceof Player) {
             Player player = (Player) sender;
             player.sendMessage("Hello " + player.getName() + "! My name is Evil...");
