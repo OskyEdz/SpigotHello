@@ -1,0 +1,11 @@
+name: SpigotHello
+version: 1.0
+author: OskyEdz
+main: se.peacehult.spigothello.Main
+api-version:
+depend:
+website: https://peacehult.se
+commands:
+  <command>:
+    description:
+    usage:
