@@ -14,5 +14,6 @@ public class Main extends JavaPlugin {
     @Override
     public void onDisable() {
         //On server stop and disable plugin
+        System.out.println("I'm going down...");
     }
 }
