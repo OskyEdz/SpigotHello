@@ -3,3 +3,7 @@ version: '1.15'
 author: OskyEdz
 main: se.peacehult.spigothello.Main
 website: https://peacehult.se
+commands:
+  welcome:
+    description: Prints message in chat.
+    usage: /welcome

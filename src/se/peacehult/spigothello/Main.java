@@ -6,6 +6,9 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         //On server start and enabling plugin
+        System.out.println("Hello server!");
+        //Register command
+        this.getCommand("welcome").setExecutor(new CommandWelcome());
     }
 
     @Override
