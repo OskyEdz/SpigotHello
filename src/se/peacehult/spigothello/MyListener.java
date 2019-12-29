@@ -27,4 +27,11 @@ public class MyListener implements Listener {
         public void onPlayerChat2(AsyncPlayerChatEvent event) {
         System.out.println("This shouldn't be executing");
     }
+
+    //Calling my event
+    @EventHandler
+    public void onCoolEvent(CoolEvent event) {
+
+    }
+
 }
