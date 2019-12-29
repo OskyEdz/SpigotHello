@@ -17,8 +17,8 @@ public class MyListener implements Listener {
 
     //Executes before the second method because it has a much lower priority.
     @EventHandler (priority = EventPriority.LOWEST)
-        public void onPlayerChat1(AsyncPlayerChatEvent event) {
-            System.out.println("Who am I?");
+        public void onPlayerChat1(AsyncPlayerChatEvent event) { //Redirects all chat to async
+            System.out.println("Who am I?"); //Prints to console
             event.setCancelled(true);
         }
 
