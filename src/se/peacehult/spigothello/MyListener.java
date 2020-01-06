@@ -13,8 +13,8 @@ public class MyListener extends se.peacehult.spigothello.Main implements Listene
     //When a player joins, type in chat to all players.
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        Bukkit.broadcastMessage("Welcome " + event.getPlayer().getName() + " to the server!");
         Player player = event.getPlayer();
-        Bukkit.broadcastMessage("Welcome " + player.getName() + " to the server!");
         if (config.getBoolean("youAreAwesome")) {
             player.sendMessage("You are awesome!");
         } else {
