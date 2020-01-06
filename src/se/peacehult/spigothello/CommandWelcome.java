@@ -1,6 +1,5 @@
 package se.peacehult.spigothello;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,12 +14,6 @@ public class CommandWelcome implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             player.sendMessage("Hello " + player.getName() + "! My name is Evil...");
-        }
-
-        CoolEvent coolEvent = new CoolEvent("OskyEdz");   // Initialize event
-        Bukkit.getPluginManager().callEvent(coolEvent);               // Fire event and allow Listener
-        if (!(coolEvent.isCancelled())) {
-            Bukkit.getPlayer("OskyEdz").sendMessage(coolEvent.getPlayerName()); // Use event data
         }
 
         return true;

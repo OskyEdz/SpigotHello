@@ -1,18 +1,25 @@
 package se.peacehult.spigothello;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class MyListener implements Listener {
+public class MyListener extends se.peacehult.spigothello.Main implements Listener {
 
     //When a player joins, type in chat to all players.
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        Bukkit.broadcastMessage("Welcome " + event.getPlayer().getName() + " to the server!");
+        Player player = event.getPlayer();
+        Bukkit.broadcastMessage("Welcome " + player.getName() + " to the server!");
+        if (config.getBoolean("youAreAwesome")) {
+            player.sendMessage("You are awesome!");
+        } else {
+            player.sendMessage("You are not awesome...");
+        }
     }
 
     //Executes before the second method because it has a much lower priority.
@@ -26,12 +33,6 @@ public class MyListener implements Listener {
     @EventHandler (priority = EventPriority.HIGHEST, ignoreCancelled = true)
         public void onPlayerChat2(AsyncPlayerChatEvent event) {
         System.out.println("This shouldn't be executing");
-    }
-
-    //Calling my event
-    @EventHandler
-    public void onCoolEvent(CoolEvent event) {
-
     }
 
 }

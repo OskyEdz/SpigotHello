@@ -1,9 +1,12 @@
 package se.peacehult.spigothello;
 
-import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin {
+public class Main extends JavaPlugin implements Listener {
+    final FileConfiguration config = this.getConfig();
+
     @Override
     public void onEnable() {
 
@@ -14,7 +17,13 @@ public class Main extends JavaPlugin {
         this.getCommand("welcome").setExecutor(new CommandWelcome());
 
         //Register Listeners
-        getServer().getPluginManager().registerEvents(new MyListener(), this);
+        getServer().getPluginManager().registerEvents(this, this);
+
+        // Default config values
+
+        config.addDefault("youAreAwesome", true);
+        config.options().copyDefaults(true);
+        saveConfig();
 
     }
 

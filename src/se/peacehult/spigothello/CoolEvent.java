@@ -21,7 +21,7 @@ public class CoolEvent extends Event {
         this.isCancelled = isCancelled;
     }
 
-    private static final HandlerList HANDLERS = new HandlerList(); // Need these methods because Spigot users
+    private static final HandlerList HANDLERS = new HandlerList(); // Need these methods because Spigot uses
                                                                    // the HandlerList class to separate other
                                                                    // EventHandlers from listening to other events
     public HandlerList getHandlers() {
